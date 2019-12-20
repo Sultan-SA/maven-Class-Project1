@@ -1,0 +1,52 @@
+package SeleniumBasics;
+
+import java.util.concurrent.TimeUnit;
+
+
+
+import org.openqa.selenium.By;
+//import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SDET2019AUG_SDET001 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		String url ="https://tekschoolofamerica.com/test-environment/";
+		driver.get(url);
+		
+		
+		driver.getTitle();
+		String tecSchoolPageTitle=driver.getTitle();
+		System.out.println(tecSchoolPageTitle);
+		
+		//driver.findElement(By.xpath("//a[text()='Test Environment']")).click();
+		//driver.findElement(By.xpath("//a[text()='Test Environment']")).sendKeys(Keys.ENTER);
+		String testEnvPageTitle=driver.getTitle();
+		System.out.println(testEnvPageTitle);
+		driver.findElement(By.xpath("//span[text()='My Account']")).click();
+		//driver.findElement(By.xpath(xpathExpression))
+		driver.findElement(By.xpath("//a[text()='Register']")).click();
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

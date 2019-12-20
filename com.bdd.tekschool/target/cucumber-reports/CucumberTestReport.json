@@ -1,0 +1,67 @@
+[
+  {
+    "comments": [
+      {
+        "line": 2,
+        "value": "#this is the name of feature"
+      }
+    ],
+    "line": 3,
+    "elements": [
+      {
+        "comments": [
+          {
+            "line": 5,
+            "value": "#this is name of scenario"
+          }
+        ],
+        "line": 7,
+        "name": "Login test to TekSChool Test Environment",
+        "description": "",
+        "id": "login-action;login-test-to-tekschool-test-environment",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 9,
+            "name": "User is TekSchool page",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 10,
+            "name": "User Click on Test Environment link",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 11,
+            "name": "User should see Test Environment page",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@test"
+          }
+        ]
+      }
+    ],
+    "name": "Login Action",
+    "description": "",
+    "id": "login-action",
+    "keyword": "Feature",
+    "uri": "Features/login.feature"
+  }
+]

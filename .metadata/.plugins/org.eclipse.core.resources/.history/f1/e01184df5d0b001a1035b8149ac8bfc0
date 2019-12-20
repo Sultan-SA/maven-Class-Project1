@@ -1,0 +1,49 @@
+package SeleniumBasics;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Cities {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        
+		driver.get("https://www.aa.com/homePage.do");
+		
+		//1,grab the departure box xpath
+				// store in a WebElement
+				//3. clear the box
+				//4. send (wash) value
+				//5. create a list for string webElemnt of dropdowns
+				//6. create a for each loop to travel to list indexes
+				//7.write an if conditionro click or select value we want
+				//8.break from the loop
+				
+				WebElement city = driver.findElement(By.xpath("//*[@id=\"reservationFlightSearchForm.destinationAirport\"]"));
+				city.clear();
+				city.sendKeys("JFK");
+				List<WebElement> cities1 =driver.findElements(By.xpath("//*[@id=\"reservationFlightSearchForm.destinationAirport\"]"));
+				System.out.println(cities1.size());
+				
+				for(WebElement element:city) {
+					try {
+					if(element.getText().contains("JFK"))
+						element.click();
+					break;
+				
+				}catch(StaleElementReferenceException e) {
+					System.out.println("Element is no longer attached to dom");
+	}
+
+}
